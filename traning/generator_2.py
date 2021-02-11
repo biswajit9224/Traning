@@ -80,6 +80,8 @@ for i in data:
 #         print(_search('pinu',i))
 #         print(i)
 
-
+for i in range(10):
+    print(i)
+    print(4)
 
 
