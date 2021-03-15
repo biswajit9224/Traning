@@ -1,3 +1,144 @@
+1. Write a program to find the length of the string without using inbuilt function (len).
+
+def _len(iterable):
+    _count = 0
+    for item in iterable:
+        _count += 1
+    return _count
+
+>>> _len('Hello')
+5
+>>> _len([1, 2, 3, 4])
+4
+>>> 
+>>> _len({1, 2, 3})
+3
+>>> _len((1, 2, 3, 4))
+4
+>>> 
+2. Write a program to reverse a string without using any inbuilt functions.
+
+def reverse(any_string):
+    temp = []
+    for i in range(len(any_string)-1, -1, -1):
+        temp.append(any_string[i])
+    return ''.join(temp)
+
+>>> reverse('Hello world')
+'dlrow olleH'
+>>> 
+>>> reverse('Python')
+'nohtyP'
+>>> 
+>>> reverse('racecar')
+'racecar'
+>>> 
+3. Write a program to replace one string with another. e.g. "Hello World" replace "World" with "Universe".
+
+>>> s = 'Hello world'
+>>> s.replace('world', 'universe')
+'Hello universe'
+>>>
+4. How to convert a string to a list and vice-versa.
+
+def convert_to_string(any_list):
+    return ''.join(any_list)
+
+def convert_to_list(any_string):
+    return any_string.split()
+
+>>> convert_to_list('steve')
+['steve']
+>>> convert_to_string(['steve', 'jobs'])
+'stevejobs'
+5. Covert the string "Hello welcome to Python" to a comma separated string.
+
+>>> s = "Hello welcome to Python"
+>>> 
+>>> s
+'Hello welcome to Python'
+>>> 
+>>> temp = s.split()
+>>> temp
+['Hello', 'welcome', 'to', 'Python']
+>>> ','.join(temp)
+'Hello,welcome,to,Python'
+6. Write a program to print alternate characters in a string.
+
+>>> s = 'hello world'
+>>> print(s[::2])  # Using Slicing Syntax
+hlowrd
+>>> 
+7. Write a Program to print ascii values of the characters present in a string.
+
+>>> s = 'hello'
+>>> 
+>>> for c in s:
+	print(ord(c))
+104
+101
+108
+108
+111
+>>> 
+8. Write program to convert upper case to lower case and vice-versa without using inbuilt method.
+
+def convert(any_string):
+    l = []
+    for c in any_string:
+        temp = ord(c)   # Get the ASCII value of the character
+        if temp>= 97 and temp<=122:
+            l.append(chr(temp - 32))
+        elif temp>=65 and temp<=90:
+            l.append(chr(temp+32))
+    return ''.join(l)
+
+>>> convert('Hello WorlD')
+'hELLOwORLd'
+def convert(any_string):
+    l = []
+    for c in any_string:
+        temp = ord(c)
+        if temp in range(97, 123):
+            l.append(chr(temp-32))
+        elif temp in range(65, 91):
+            l.append(chr(temp+32))
+        else:
+            l.append(chr(temp))
+    return ''.join(l)
+>>> convert('Hello WorlD')
+'hELLOwORLd'
+9. Write program to swap two numbers without using 3rd variable.
+
+>>> a = 10
+>>> b = 20
+>>> 
+>>> b, a = a, b
+>>> a
+20
+>>> b
+10
+>>> 
+10. Write program to merge two different lists.
+
+>>> a = [1, 2, 3]
+>>> 
+>>> b = [4, 5, 6]
+>>> 
+>>> c = [*a, *b]
+>>> c
+[1, 2, 3, 4, 5, 6]
+>>> 
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> a + b
+[1, 2, 3, 4, 5, 6]
+# Using chain
+>>> from itertools import chain
+>>> s = chain(a, b)     # Returns an iterator
+>>> list(s)
+>>> [1, 2, 3, 4, 5, 6]
+11. Write program to read a random line in a file. 
 ex. 50, 65, 78th line)
 
 from itertools import islice    
